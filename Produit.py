@@ -6,7 +6,7 @@ class produit():
 
 
     def CalculerprixTTC(self):
-        self.prixTTC+ self.prixHT + self.TVA
+        self.prixTTC = int(self.prixHT) + int(self.TVA)
         print("Le prix TTC est de :",self.prixTTC)
 
     def afficher(self):
@@ -19,6 +19,7 @@ class produit():
         self.nom = self.newnom
         self.newprix = input("entre le nouveau prix")
         self.prixHT = self.newprix
+        produit.CalculerprixTTC(self)
         print(produit.afficher(self))
 produit1= produit("MMS",3,0.4)
 produit1.modifier()
